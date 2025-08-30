@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Bay</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Pacifico&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+
+
+  <!-- Header -->
+  <header class="bc-header">
+  <div class="bc-brand">
+    
+    <h1><span class="bc-glyph">⌨</span>Byte Crunch</h1>
+    
+  </div>
+ 
+</header>
+
+
+<div class="well well--neo d-flex justify-content-between align-items-center">
+  <!-- LEFT SIDE: Create + Search -->
+  <div class="d-flex gap-2">
+
+    <button id="searchPost" onclick="window.location.href='/index'" class="btn btn-success">Back to Home</button>
+    
+  </div>
+</div>
+
+<!---------FORM--------------------------------------------------------->
+
+
+
+
+
+<article class="bc-card post post-detail">
+  <h2 class="bc-title"><%= post.title %></h2>
+  <p class="bc-meta"><%= post.category %> · <%= post.date %></p>
+
+  <div class="bc-thumb full" style="background-image: url('<%= post.image %>');"></div>
+
+  <!-- Author Details -->
+  <div class="post-author mt-3">
+    <p><strong>Author:</strong> <%= post.author %></p>
+    <p><strong>Social:</strong> <%= post.social %></p>
+    <p><strong>Email:</strong> <%= post.email %></p>
+  </div>
+
+  <!-- Tags -->
+  <% if (post.tags && post.tags.length > 0) { %>
+    <div class="post-tags mt-2 mb-3">
+      <strong>Tags:</strong>
+      <% post.tags.forEach(tag => { %>
+        <span class="badge bg-primary me-1"><%= tag %></span>
+      <% }) %>
+    </div>
+  <% } %>
+
+  <!-- Full Post Content -->
+  <p class="bc-content"><%= post.content %></p>
+<!-- Star Rating -->
+<div class="rating mt-4">
+  <form id="ratingForm" action="/rate-post" method="POST">
+    <input type="hidden" name="postId" value="<%= post.id %>">
+    <label class="form-label mb-2">Rate this post:</label><br>
+
+    <% for (let i = 1; i <= 5; i++) { %>
+      <input type="radio" name="rating" id="star-<%= i %>" value="<%= i %>">
+      <label for="star-<%= i %>">★</label>
+    <% } %>
+
+    <button class="postButton search-button mt-2" type="submit">Submit Rating</button>
+  </form>
+</div>
+
+
+</article>
+
+
+
+
+
+
+  
+
+<!---------FORM--------------------------------------------------------->
+   <div class="well well--neo">
+    
+  </div>
+
+  <!-- Footer -->
+  <footer class="bc-footer">
+    <p>© Byte Crunch · 2029</p>
+  </footer>
+
+  
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
+    crossorigin="anonymous"></script>
+
+
+
+
+
+</body>
+</html>

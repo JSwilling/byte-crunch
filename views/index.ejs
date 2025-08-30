@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Bay</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a2c2d66057.js" crossorigin="anonymous"></script>
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Pacifico&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+
+
+  <!-- Header -->
+  <header class="bc-header">
+  <div class="bc-brand">
+    
+  <h1><span class="bc-glyph">⌨</span>Byte Crunch</h1>
+    
+  </div>
+ 
+</header>
+
+
+<div class="well well--neo d-flex justify-content-between align-items-center">
+  <!-- LEFT SIDE: Create + Search -->
+  <div class="d-flex gap-2">
+    <button class="btn" onclick="window.location.href='/create'">Create Post</button>
+
+    <form action="/search" method="GET" class="search-form">
+  <input type="text" name="q" placeholder="Search post by title..." required>
+  <button class="search-button" type="submit">Search</button>
+</form>
+  </div>
+
+  <!-- RIGHT SIDE: Theme toggle -->
+  <button id="themeToggle" class="btn btn-outline-dark">☀︎</button>
+</div>
+
+
+
+  
+  <!-- Hero -->
+  <section class="bc-hero">
+    <<h2 class="bc-heading">Inside the Stack</h2>
+    <p class="bc-subheading">Real lessons. Real tech. No fluff — just clean code, sharp design, and powerful insights.</p>
+  </section>
+
+  <!-- Layout -->
+  <main class="bc-layout">
+    <!-- LEFT / MAIN POST------------------------------------------------------------------------------------->
+    <section class="bc-main">
+
+  <% posts.forEach(post => { %>
+  <article class="bc-card post">
+    <h3 class="bc-title"><%= post.title %></h3>
+    <p class="bc-meta"><%= post.category %> · <%= post.date %></p>
+
+    <div class="bc-thumb" style="background-image: url('<%= post.image %>');" aria-label="Image"></div>
+
+    <p class="bc-snippet"><%= post.content.slice(0, 200) %>...</p>
+
+    <a href="/posts/<%= post.slug %>" class="bc-btn">Read More</a>
+  </article>
+<% }) %>
+
+<!-- LEFT / MAIN POST------------------------------------------------------------------------------------->
+
+
+</section>
+
+<!-- RIGHT / ASIDE -->
+<aside class="bc-aside">
+
+  <!-- About the Platform -->
+  <div class="bc-card sidebar">
+    <h4>About Byte Crunch</h4>
+    <div class="bc-thumb small" style="background-image: url('/images/logo-square.png');"></div>
+    <p>
+      Byte Crunch is your launchpad for modern web development. 
+      We break down full-stack concepts into bite-sized posts
+       — from backend APIs to frontend animation tricks 
+       — to help you level up, one post at a time.
+       <br>
+       <br>
+       Inspired by: <br> Dr. Angela Yu       
+    </p>
+  </div>
+
+
+  <!-- Follow on Social -->
+  <<div class="bc-card sidebar">
+  <h4>Connect with Us</h4>
+  <div class="bc-social">
+    <a href="https://twitter.com" aria-label="X">
+      <i class="bi bi-twitter-x"></i>
+    </a>
+    <a href="https://github.com/JSwilling" aria-label="GitHub">
+      <i class="bi bi-github"></i>
+    </a>
+    <a href="https://youtube.com" aria-label="YouTube">
+      <i class="bi bi-youtube"></i>
+    </a>
+  </div>
+</div>
+
+
+</aside>
+
+
+
+
+
+
+  </main>
+
+   <div class="well well--neo">
+    
+  </div>
+
+  <!-- Footer -->
+  <footer class="bc-footer">
+    <p>© Byte Crunch · 2029</p>
+  </footer>
+
+  
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
+    crossorigin="anonymous"></script>
+
+
+
+
+
+</body>
+</html>

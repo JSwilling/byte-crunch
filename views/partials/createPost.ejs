@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Bay</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Pacifico&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+
+
+  <!-- Header -->
+  <header class="bc-header">
+  <div class="bc-brand">
+    
+    <h1><span class="bc-glyph">⌨</span>Byte Crunch</h1>
+    
+  </div>
+ 
+</header>
+
+
+<div class="well well--neo d-flex justify-content-between align-items-center">
+  <!-- LEFT SIDE: Create + Search -->
+  <div class="d-flex gap-2">
+
+    <button id="searchPost" onclick="window.location.href='/index'" class="submitButton">Cancel Post</button>
+    
+  </div>
+</div>
+
+<!---------FORM--------------------------------------------------------->
+
+
+
+<div class="form-container">
+
+  <% if (typeof success !== 'undefined' && success) { %>
+    <!-- ✅ Success Message -->
+    <div class="alert alert-success text-center" role="alert">
+      ✅ Post created successfully!
+      <br><br>
+      <a href="/index" class="btn btn-primary mt-2">Back to Home</a>
+    </div>
+  <% } else { %>
+    <!-- 📝 Show Form -->
+    <form id="createPost" action="/create-post" method="POST" enctype="multipart/form-data">
+      <label class="formLabel" for="author">Author Name:</label>
+      <input class="formInput" type="text" id="author" name="author" placeholder="Jane Dev">
+
+      <label class="formLabel" for="social">Social Handle:</label>
+      <input class="formInput" type="text" id="social" name="social" placeholder="@janedev">
+
+      <label class="formLabel" for="email">Email:</label>
+      <input class="formInput" type="email" id="email" name="email" placeholder="jane@example.com">
+
+      <label class="formLabel" for="category">Category (e.g. Frontend, Backend):</label>
+      <input class="formInput" type="text" id="category" name="category" placeholder="Frontend">
+
+      <label class="formLabel" for="title">Post Title:</label>
+      <input class="formInput" type="text" id="title" name="title" placeholder="Your blog post title">
+
+      <label class="formLabel" for="tags">Tags (comma-separated):</label>
+      <input class="formInput" type="text" id="tags" name="tags" placeholder="css, react, tailwind">
+
+      <label class="formLabel" for="content">Post Content:</label>
+      <textarea id="content" name="content" rows="10" placeholder="Your post starts here..."></textarea>
+
+      <label class="formLabel " for="image">Upload Image (optional):</label>
+      <input class="formInput img-button" type="file" id="image" name="image" accept="image/*">
+
+      <input class="submitButton" type="submit" value="Submit Post">
+    </form>
+  <% } %>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+  
+
+<!---------FORM--------------------------------------------------------->
+   <div class="well well--neo">
+    
+  </div>
+
+  <!-- Footer -->
+  <footer class="bc-footer">
+    <p>© Byte Crunch · 2029</p>
+  </footer>
+
+  
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
+    crossorigin="anonymous"></script>
+
+
+
+
+
+</body>
+</html>

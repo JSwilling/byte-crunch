@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500..900&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Exwayer";
+  src: url("./fonts/Exwayer-X3eqa.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Exwayer";
+  src: url("./fonts/Exwayer-X3eqa.ttf") format("truetype");
+  font-display: swap;            /* shows fallback immediately, then swaps */
+  /* Optional: reduce CLS by matching fallback metrics */
+  /* size-adjust: 102%; ascent-override: 90%; descent-override: 20%; line-gap-override: 0%; */
+}
+
+
+
+
+
+
+body.cyber-void {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  background: radial-gradient(ellipse at center, #606060 0%, #e4e1e1 100%);
+  color: #b0faca;
+  font-family: 'Orbitron', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+body {
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+
+
+/* === CENTERED CONTAINER === */
+.main-container {
+  z-index: 2;
+  text-align: center;
+  justify-content: center;
+  align-items: center ;
+  align-content: center;
+  padding: 3rem 2rem;
+  max-width: 1500px;
+  height: 900px;;
+  width: 90%;
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(176, 250, 202, 0.1);
+  border-radius: 3px;
+  box-shadow:
+    0 0 0 5px #ffffff,                 /* << thick black border */
+    0 48px 34px rgba(0, 0, 0, 0.747),    /* subtle drop depth */
+    0 0 56px rgba(0, 0, 0, 0.85),/* white glow halo */
+    0 0 90px rgba(0, 0, 0, 0.55);
+  transition: transform .35s ease, box-shadow .35s ease;
+  transition: all 0.3s ease-in-out;
+}
+
+/* === LOGO === */
+.byte-logo {
+  font-family: "Exwayer", sans-serif;
+  font-size: 11rem;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  color: #ccff99;
+  text-shadow:
+    0 0 15px rgba(204, 255, 153, 0.7),
+    0 0 45px rgba(204, 255, 153, 0.25);
+  margin-bottom: 1rem;
+
+  /* Flicker on load */
+  animation: logoFlicker 1.8s ease-in-out 1;
+}
+
+/* === Flicker Keyframes === */
+@keyframes logoFlicker {
+  0%   { color: black; text-shadow: none; }
+  10%  { color: white; text-shadow: 0 0 20px white; }
+  20%  { color: black; text-shadow: none; }
+  30%  { color: white; text-shadow: 0 0 20px white; }
+  40%  { color: black; text-shadow: none; }
+  60%  { color: white; text-shadow: 0 0 25px white; }
+  80%  { color: black; text-shadow: none; }
+  100% { color: #ccff99; text-shadow: 
+           0 0 15px rgba(204, 255, 153, 0.7),
+           0 0 45px rgba(204, 255, 153, 0.25); }
+}
+
+
+
+
+
+/* === HEADLINE === */
+.byte-heading {
+  margin-top: 1.5rem;
+  font-size: 2.75rem;
+  color: #ffffff;
+  text-shadow: 0 0 8px #000000;
+}
+
+
+/* === SUBTEXT === */
+.byte-subtext {
+  margin-top: 0.75rem;
+  font-size: 1.3rem;
+  color: #ccff99;
+  opacity: 0.88;
+  max-width: 420px;
+  margin-inline: auto;
+}
+
+/* === CTA BUTTON === */
+/* === CTA BUTTON === */
+.byte-btn {
+  margin-top: 9rem;
+  height: 70px;
+  width: 250px;
+  display: inline-flex;               /* cleaner centering */
+  justify-content: center;
+  align-items: center;
+  padding: 0.9rem 2.2rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  border-radius: 6px;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  box-shadow:
+    0 0 0 5px #ccff99,
+    0 8px 4px rgba(0,0,0,0.25),
+    0 0 16px rgba(255,255,255,0.85),
+    0 0 20px rgba(255,255,255,0.55);
+  
+  /* breathing animation */
+  animation: breatheBtn 18s ease-in-out infinite;
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+@keyframes breatheBtn {
+  0%, 100% {
+    background: #fff;
+    color: #000;
+    box-shadow:
+      0 0 8px rgba(255,255,255,0.6),
+      0 0 20px rgba(255,255,255,0.4);
+  }
+  50% {
+    background: #000;
+    color: #fff;
+    box-shadow:
+      0 0 12px rgba(0,0,0,0.6),
+      0 0 25px rgba(0,0,0,0.4);
+  }
+}
+
+
+
+.byte-btn:hover {
+  background: linear-gradient(90deg, #000000, #000000);
+  color: white;
+  border-radius: 3px;
+  box-shadow: 
+    0 0 14px rgba(255, 255, 255, 0.8), 
+    0 0 28px rgba(255, 255, 255, 0.4);
+  transform: scale(1.04);
+  transition: transform .35s ease, box-shadow .35s ease-in-out;
+}
+
+/* === FOOTER === */
+.byte-footer {
+  margin-top: 9rem;
+  font-size: 0.99rem;
+  color: #ffffff;
+}
+
+
+@media (max-width: 768px) {
+  .byte-logo {
+    font-size: 4.5rem;
+  }
+  .byte-heading {
+    font-size: 1.5rem;
+  }
+  .byte-subtext {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  .byte-btn {
+    margin-top: 3rem;
+    font-size: 0.95rem;
+  }
+}
+
+
+/* ===============================
+   RESPONSIVE LANDING PAGE FIXES
+   =============================== */
+
+/* Tablet: max-width 768px */
+@media (max-width: 768px) {
+  .main-container {
+    height: auto;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .byte-logo {
+    font-size: 6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .byte-heading {
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+
+  .byte-subtext {
+    font-size: 1rem;
+    padding: 0 1rem;
+    max-width: 90%;
+  }
+
+  .byte-btn {
+    width: 100%;
+    font-size: 1.25rem;
+    height: 60px;
+    margin-top: 4rem;
+  }
+
+  .byte-footer {
+    font-size: 0.9rem;
+    margin-top: 4rem;
+  }
+}
+
+/* Phone: max-width 480px */
+@media (max-width: 480px) {
+  .main-container {
+    padding: 2rem 1rem;
+    width: 100%;
+  }
+
+  .byte-logo {
+    font-size: 3.8rem;
+    letter-spacing: 0.1em;
+  }
+
+  .byte-heading {
+    font-size: 1.4rem;
+    margin-top: 0.8rem;
+  }
+
+  .byte-subtext {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding: 0 1rem;
+  }
+
+  .byte-btn {
+    font-size: 1rem;
+    height: 52px;
+    width: 100%;
+    margin-top: 3rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .byte-footer {
+    font-size: 0.85rem;
+    padding: 0 1rem;
+    margin-top: 3rem;
+  }
+}
+
+/* Ultra-small phones (foldables or iPhone SE) */
+@media (max-width: 360px) {
+  .byte-logo {
+    font-size: 3rem;
+  }
+
+  .byte-heading {
+    font-size: 1.25rem;
+  }
+
+  .byte-btn {
+    font-size: 0.9rem;
+    height: 48px;
+  }
+}
