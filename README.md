@@ -43,9 +43,6 @@ One click to flip between Dark Mode 🖤 and Light Mode ☀️.
 Contributions are welcome! Fork the repo, make your changes, and submit a PR.
 Got an idea to push Byte Crunch further into the cyber-future? Let’s build it. ⚡
 
-📜 License
-MIT License © 2025 — Byte Crunch Collective
-
 ## 🚀 Getting Started
 
 Clone the repo:
@@ -64,4 +61,8 @@ bash
 Copy code
 npm start
 Or simply open index.html in your browser for a static preview.
+```
+
+📜 License
+MIT License © 2025 — Byte Crunch Collective
 
