@@ -109,7 +109,7 @@ body {
   font-family: "Exwayer", sans-serif;
   font-size: 8.6rem;
   color: var(--accent);
-  text-shadow: 0 0 30px rgb(255, 255, 255);
+  text-shadow: 0 0 30px grey;
   font-weight: 700;
   letter-spacing: .08em;
   text-shadow:
@@ -820,6 +820,7 @@ background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' heigh
   box-shadow: 0 0 20px rgba(204,255,153,0.6);
 
 }
+
 
 
 
