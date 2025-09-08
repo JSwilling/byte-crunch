@@ -4,7 +4,7 @@
   --bg-2: #ffffff;
   --text: #000000;
   --muted: #a8bca5;
-  --accent: #ccff99;
+  --accent: black;
   --accent-2: #ffffff;
   --card: rgb(255, 255, 255);
   --stroke: rgb(255, 255, 255);
@@ -820,5 +820,6 @@ background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' heigh
   box-shadow: 0 0 20px rgba(204,255,153,0.6);
 
 }
+
 
 
